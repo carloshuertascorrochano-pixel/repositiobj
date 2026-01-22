@@ -7,8 +7,6 @@ public class Estudiante {
     private String nombre;
     private String curso;
     private String email;
-
-
     private int nia;
     public Estudiante (String nombre, String curso, String email){
 
