@@ -9,12 +9,17 @@ public class Estudiante {
     private String email;
     private int nia;
 
+
+    //mire aqui
+    private libro Libro;
+
     public Estudiante(String nombre, String curso, String email) {
 
         this.email = email;
         this.curso = curso;
         this.nombre = nombre;
         this.nia = cont_est++;
+        Libro=null;
 
     }
 
@@ -66,11 +71,19 @@ public class Estudiante {
     public void setNia(int nia) {
         this.nia = nia;
     }
+    //get and set libro necesarios lod dos
+    public libro getLibro() {
+        return Libro;
+    }
+
+    public void setLibro(libro libro) {
+        Libro = libro;
+    }
 
     @Override
     public String toString() {
 
-        System.out.println("paciente [nombre = " + nombre + " ]");
+        System.out.println("paciente [nombre = " + nombre + "libro" + Libro + " ]");
         return "";
     }
 }

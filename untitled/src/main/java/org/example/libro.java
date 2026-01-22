@@ -39,6 +39,10 @@ public class libro {
             librosdisp--;
             //mire sao
             estudiantePrestado=estudiante;
+            //mire esto
+            estudiante.setLibro(this);
+        } else if (estudiante.getLibro() == null) {
+
         } else {
             System.out.println("el libro " + titulo + " no esta disponible");
         }
@@ -49,8 +53,11 @@ public class libro {
             disponible = true;
             System.out.println("el libro " + titulo + " ha sido devuelto");
             librosdisp++;
+            //y otra maaaas
+            estudiantePrestado.setLibro(null);
             //broooooooooooo
             estudiantePrestado=null;
+
         } else {
             System.out.println("el libro " + titulo + " esta disponible, no devuelvas" + estudiante.getNombre() + " de " + estudiante.getCurso());
         }
