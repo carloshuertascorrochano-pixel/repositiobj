@@ -20,6 +20,14 @@ public class Estudiantesapp {
         libro biblia = new libro ( "jesuscristo", "biblia");
 
         System.out.println(biblia.estadisponible());
+
         System.out.println(biblia);
+        // no estabas
+        biblia.prestar(jorge);
+        System.out.println(biblia.getEstudiantePrestado());
+        biblia.getEstudiantePrestado().getNombre();
+
+        System.out.println(biblia);
+
     }
 }

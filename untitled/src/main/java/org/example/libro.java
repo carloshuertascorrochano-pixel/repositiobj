@@ -11,6 +11,7 @@ public class libro {
     private String titulo;
     private boolean disponible;
     private String id;
+    private Estudiante estudiantePrestado;
 
     public libro(String autor, String titulo) {
 
@@ -20,29 +21,38 @@ public class libro {
         id = generarid();
         cantidadlibros++;
         librosdisp++;
+        //no estabas
+        estudiantePrestado = null;
     }
-
+    public Estudiante getEstudiantePrestado() {
+        return estudiantePrestado;
+    }
     private String generarid() {
         return cadenaID + cantidadlibros;
     }
+    // no estabas mira prestar
 
-    public void prestar() {
+    public void prestar(Estudiante estudiante) {
         if (disponible) {
             disponible = false;
-            System.out.println("el libro " + titulo + " ha sido prestado");
+            System.out.println("el libro " + titulo + " ha sido prestado a " + estudiante.getNombre() + " de " + estudiante.getCurso());
             librosdisp--;
+            //mire sao
+            estudiantePrestado=estudiante;
         } else {
             System.out.println("el libro " + titulo + " no esta disponible");
         }
     }
-
-    public void devolver() {
+//mire aqui tambien
+    public void devolver(Estudiante estudiante) {
         if (!disponible) {
             disponible = true;
             System.out.println("el libro " + titulo + " ha sido devuelto");
             librosdisp++;
+            //broooooooooooo
+            estudiantePrestado=null;
         } else {
-            System.out.println("el libro " + titulo + " esta disponible, no devuelvas");
+            System.out.println("el libro " + titulo + " esta disponible, no devuelvas" + estudiante.getNombre() + " de " + estudiante.getCurso());
         }
     }
 
@@ -81,11 +91,11 @@ public class libro {
     public void setAutor(String autor) {
         this.autor = autor;
     }
-
+// mire to String
     @Override
     public String toString() {
 
-        System.out.println("paciente [ autor " + autor + " de titulo" + titulo + " ]");
+        System.out.println("paciente [ autor " + autor + " de titulo" + titulo + "estudiante" + estudiantePrestado + " ]");
         return "";
 
     }

@@ -8,26 +8,29 @@ public class Estudiante {
     private String curso;
     private String email;
     private int nia;
-    public Estudiante (String nombre, String curso, String email){
 
-        this.email=email;
-        this.curso=curso;
-        this.nombre=nombre;
+    public Estudiante(String nombre, String curso, String email) {
+
+        this.email = email;
+        this.curso = curso;
+        this.nombre = nombre;
         this.nia = cont_est++;
 
     }
-    public Estudiante(String nombre){
-        this(nombre,"","");
+
+    public Estudiante(String nombre) {
+        this(nombre, "", "");
     }
-    public static boolean validarcorreo(String correo){
-        if(correo.matches(correo)){
+
+    public static boolean validarcorreo(String correo) {
+        if (correo.matches(correo)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
-    public static int OBtotalEST(){
+    public static int OBtotalEST() {
 
         return cont_est;
     }
@@ -35,6 +38,7 @@ public class Estudiante {
     public String getCurso() {
         return curso;
     }
+
     public void setCurso(String curso) {
         this.curso = curso;
     }
@@ -42,6 +46,7 @@ public class Estudiante {
     public String getNombre() {
         return nombre;
     }
+
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -49,6 +54,7 @@ public class Estudiante {
     public String getEmail() {
         return email;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -56,8 +62,15 @@ public class Estudiante {
     public int getNia() {
         return nia;
     }
+
     public void setNia(int nia) {
         this.nia = nia;
     }
 
+    @Override
+    public String toString() {
+
+        System.out.println("paciente [nombre = " + nombre + " ]");
+        return "";
+    }
 }
