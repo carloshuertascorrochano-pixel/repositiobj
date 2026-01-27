@@ -1,4 +1,4 @@
-package org.example;
+package Biblio;
 
 public class Estudiantesapp {
     public static void main(String[] args) {
@@ -17,17 +17,20 @@ public class Estudiantesapp {
 
         System.out.println("hay " + Estudiante.OBtotalEST() + " estudiantes");
 
-        libro biblia = new libro ( "jesuscristo", "biblia");
+        Editorial millenium = new Editorial("millenium", "España");
+
+        libro biblia = new libro ( "jesuscristo", "biblia", millenium);
 
         System.out.println(biblia.estadisponible());
 
         System.out.println(biblia);
         // no estabas
-        biblia.prestar(jorge);
         System.out.println(biblia.getEstudiantePrestado());
         biblia.getEstudiantePrestado().getNombre();
 
         System.out.println(biblia);
+
+//        Prestamo p1 = biblia.prestamo(jorge);
 
     }
 }

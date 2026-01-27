@@ -1,4 +1,4 @@
-package org.example;
+package Biblio;
 
 public class libro {
 
@@ -12,8 +12,9 @@ public class libro {
     private boolean disponible;
     private String id;
     private Estudiante estudiantePrestado;
+    private Editorial editorial;
 
-    public libro(String autor, String titulo) {
+    public libro(String autor, String titulo, Editorial editorial) {
 
         this.autor = autor;
         this.titulo = titulo;
@@ -32,17 +33,18 @@ public class libro {
     }
     // no estabas mira prestar
 
-    public void prestar(Estudiante estudiante) {
-        if (disponible) {
+    public void prestamo (Estudiante estudiante) {
+        if (disponible && estudiante.getLibro() == null) {
             disponible = false;
             System.out.println("el libro " + titulo + " ha sido prestado a " + estudiante.getNombre() + " de " + estudiante.getCurso());
             librosdisp--;
             //mire sao
-            estudiantePrestado=estudiante;
+            estudiantePrestado = estudiante;
             //mire esto
             estudiante.setLibro(this);
+            Prestamo prestamo = new Prestamo(this, estudiante);
         } else if (estudiante.getLibro() == null) {
-
+            System.out.println("el estudiante " + estudiante.getNombre() + " ya tiene libro prestado");
         } else {
             System.out.println("el libro " + titulo + " no esta disponible");
         }
@@ -102,7 +104,7 @@ public class libro {
     @Override
     public String toString() {
 
-        System.out.println("paciente [ autor " + autor + " de titulo" + titulo + "estudiante" + estudiantePrestado + " ]");
+        System.out.println("paciente [ autor " + autor + " de titulo" + titulo + "estudiante" + estudiantePrestado + "editorial" + editorial + " ]");
         return "";
 
     }

@@ -1,4 +1,4 @@
-package org.example;
+package Biblio;
 
 public class Estudiante {
 
@@ -83,7 +83,7 @@ public class Estudiante {
     @Override
     public String toString() {
 
-        System.out.println("paciente [nombre = " + nombre + "libro" + Libro + " ]");
+        System.out.println("paciente [nombre = " + nombre + "libro" + Libro.getTitulo() + " ]");
         return "";
     }
 }
