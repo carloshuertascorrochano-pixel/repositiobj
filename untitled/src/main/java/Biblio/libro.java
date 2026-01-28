@@ -34,7 +34,10 @@ public class libro {
     // no estabas mira prestar
 
     public void prestamo (Estudiante estudiante) {
-        if (disponible && estudiante.getLibro() == null) {
+
+        Prestamo prestamo = null;
+
+        if (disponible && !estudiante.getlistalibro().contains(this)) {
             disponible = false;
             System.out.println("el libro " + titulo + " ha sido prestado a " + estudiante.getNombre() + " de " + estudiante.getCurso());
             librosdisp--;
@@ -43,7 +46,7 @@ public class libro {
             //mire esto
             estudiante.setLibro(this);
             Prestamo prestamo = new Prestamo(this, estudiante);
-        } else if (estudiante.getLibro() == null) {
+        } else if (estudiante.getLibro().contains(this)) {
             System.out.println("el estudiante " + estudiante.getNombre() + " ya tiene libro prestado");
         } else {
             System.out.println("el libro " + titulo + " no esta disponible");

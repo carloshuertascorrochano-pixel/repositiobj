@@ -1,5 +1,7 @@
 package Biblio;
 
+import java.util.ArrayList;
+
 public class Estudiante {
 
     private static String correo = "^[A-Za-z0-9+_.-]+@alu.edu.gva.es$";
@@ -11,7 +13,7 @@ public class Estudiante {
 
 
     //mire aqui
-    private libro Libro;
+    private ArrayList<libro> listalibro;
 
     public Estudiante(String nombre, String curso, String email) {
 
@@ -19,12 +21,20 @@ public class Estudiante {
         this.curso = curso;
         this.nombre = nombre;
         this.nia = cont_est++;
-        Libro=null;
+
 
     }
 
     public Estudiante(String nombre) {
         this(nombre, "", "");
+    }
+
+    public static void insertarlibro (libro libro){
+
+    }
+
+    public void borrarLibro (libro libro) {
+        listalibro.remove(libro);
     }
 
     public static boolean validarcorreo(String correo) {
@@ -72,18 +82,20 @@ public class Estudiante {
         this.nia = nia;
     }
     //get and set libro necesarios lod dos
-    public libro getLibro() {
-        return Libro;
+    public ArrayList<libro> getLibro() {
+        return listalibro;
     }
 
     public void setLibro(libro libro) {
-        Libro = libro;
+        ArrayList<libro> listalibro;
     }
 
     @Override
     public String toString() {
 
-        System.out.println("paciente [nombre = " + nombre + "libro" + Libro.getTitulo() + " ]");
+        System.out.println("paciente [nombre = " + nombre +
+                //"libro" + listalibro
+                " ]");
         return "";
     }
 }
