@@ -1,0 +1,63 @@
+@startuml
+
+package Biblio {
+
+    class Editorial {
+        - nombre : String
+        - pais : String
+        - listalibro : ArrayList<libro>
+        + Editorial(nombre : String, pais : String)
+        + Editorial()
+        + getNombre() : String
+        + setNombre(nombre : String)
+        + getPais() : String
+        + setPais(pais : String)
+    }
+
+    class Estudiante {
+        - correo : String
+        - cont_est : int
+        - nombre : String
+        - curso : String
+        - email : String
+        - nia : int
+        - listalibro : ArrayList<libro>
+        + Estudiante(nombre : String, curso : String, email : String)
+        + Estudiante(nombre : String)
+        + insertarlibro(libro)
+        + borrarLibro(libro)
+        + validarcorreo(correo : String) : boolean
+        + OBtotalEST() : int
+        + getCurso() : String
+        + setCurso(curso : String)
+        + getNombre() : String
+        + setNombre(nombre : String)
+        + getEmail() : String
+        + setEmail(email : String)
+        + getNia() : int
+        + setNia(nia : int)
+        + getLibro() : ArrayList<libro>
+        + setLibro(libro)
+    }
+
+    class libro {
+
+    }
+
+    class Prestamo {
+
+    }
+
+    class Estudiantesapp {
+        + main(args : String[])
+    }
+
+    Editorial "1" o--o "*" libro : >
+    Estudiante "1" o-- "*" libro
+    libro "1" --> "0..1" Estudiante : prestado a
+    Prestamo "*" --> "1" libro
+    Prestamo "*" --> "1" Estudiante
+
+}
+
+@enduml

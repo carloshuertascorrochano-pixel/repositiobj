@@ -17,18 +17,18 @@ public class Habitacion {
         this.metros=metros;
     }
 
-    public void agregarElectrodomestico(String nombre, double cosumo){
-        for (Electrodomestico electrodomestico : listaElectrodomestico) {
-
-            if (Electrodomestico.getNombre().equals(nombre)) {
-                System.out.println("El electrodomestico " + nombre + " existe");
-                return;
-            }
-        }
-        Inmobiliaria.Electrodomestico electrodomestico = new Electrodomestico(nombre, consumo);
-        listaElectrodomestico.add(electrodomestico);
-
-    }
+//    public void agregarElectrodomestico(String nombre, double consumo){
+//        for (Electrodomestico electrodomestico : listaElectrodomestico) {
+//
+//            if (Electrodomestico.getNombre().equals(nombre)) {
+//                System.out.println("El electrodomestico " + nombre + " existe");
+//                return;
+//            }
+//        }
+//        Electrodomestico electrodomestico = new Electrodomestico(nombre, consumo);
+//        listaElectrodomestico.add(electrodomestico);
+//
+//    }
 
     public static void mostrarElectrodomesticos(){
 
