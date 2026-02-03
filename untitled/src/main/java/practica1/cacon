@@ -1,0 +1,113 @@
+#Practica 1: El formiguero contra la rebelion
+
+## Indice
+
+1.[Indice] 
+2.[Estructura de clases]
+-Diagrama de clases URL
+-código de PlantUML
+-Contenido de las clases(java)
+3.[Programa principal]
+4.[Pruebas]
+5.[Entrega]
+
+###1.Intro
+> La practica consiste en una app ...
+
+###2.Estructura dre clases
+#Practica 1: El formiguero contra la rebelion
+
+## Indice
+
+1.[Indice] 
+2.[Estructura de clases]
+-Diagrama de clases URL
+-código de PlantUML
+-Contenido de las clases(java)
+3.[Programa principal]
+4.[Pruebas]
+5.[Entrega]
+
+###1.Intro
+> La practica consiste en una app ...
+
+###2.Estructura dre clases
+
+Codigo plant UML 
+@startuml
+
+package Biblio {
+
+    class Editorial {
+        - nombre : String
+        - pais : String
+        - listalibro : ArrayList<libro>
+        + Editorial(nombre : String, pais : String)
+        + Editorial()
+        + getNombre() : String
+        + setNombre(nombre : String)
+        + getPais() : String
+        + setPais(pais : String)
+    }
+
+    class Estudiante {
+        - correo : String
+        - cont_est : int
+        - nombre : String
+        - curso : String
+        - email : String
+        - nia : int
+        - listalibro : ArrayList<libro>
+        + Estudiante(nombre : String, curso : String, email : String)
+        + Estudiante(nombre : String)
+        + insertarlibro(libro)
+        + borrarLibro(libro)
+        + validarcorreo(correo : String) : boolean
+        + OBtotalEST() : int
+        + getCurso() : String
+        + setCurso(curso : String)
+        + getNombre() : String
+        + setNombre(nombre : String)
+        + getEmail() : String
+        + setEmail(email : String)
+        + getNia() : int
+        + setNia(nia : int)
+        + getLibro() : ArrayList<libro>
+        + setLibro(libro)
+    }
+
+    class libro {
+
+    }
+
+    class Prestamo {
+
+    }
+
+    class Estudiantesapp {
+        + main(args : String[])
+    }
+
+    Editorial "1" o--o "*" libro : >
+    Estudiante "1" o-- "*" libro
+    libro "1" --> "0..1" Estudiante : prestado a
+    Prestamo "*" --> "1" libro
+    Prestamo "*" --> "1" Estudiante
+
+}
+
+@enduml
+###3.Programa principal
+
+###4.Pruebas
+
+###5.Entrega
+
+
+
+
+###3.Programa principal
+
+###4.Pruebas
+
+###5.Entrega
