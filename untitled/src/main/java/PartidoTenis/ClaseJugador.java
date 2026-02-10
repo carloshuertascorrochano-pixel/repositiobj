@@ -2,47 +2,29 @@ package PartidoTenis;
 
 public class ClaseJugador {
 
-
-
     private String nombre;
-    private String rival;
     private int ranking;
+    private ClaseJugador rival;
 
-    public ClaseJugador (String nombre, int ranking){
-
-        this.nombre=nombre;
-        this.ranking=ranking;
-
+    public ClaseJugador(String nombre, int ranking) {
+        this.nombre = nombre;
+        this.ranking = ranking;
+        this.rival = null;
     }
-
 
     public String getNombre() {
         return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
     }
 
     public int getRanking() {
         return ranking;
     }
 
-    public void setRanking(int ranking) {
-        this.ranking = ranking;
-    }
-
-    public String getRival() {
+    public ClaseJugador getRival() {
         return rival;
     }
 
-    public void setRival(String rival) {
+    public void setRival(ClaseJugador rival) {
         this.rival = rival;
-    }
-    @Override
-    public String toString(){
-
-        return "[nombre = " + nombre  + ", rival = " + rival + ", ranking = " + ranking + " .]";
-
     }
 }
