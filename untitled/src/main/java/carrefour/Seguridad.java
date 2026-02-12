@@ -47,6 +47,11 @@ import java.util.Scanner;
         }
 
         @Override
+        public void trabajar() {
+            System.out.println("vigilar a mi pueblo");
+        }
+
+        @Override
         public int getCodigo() {
             return super.getCodigo();
         }

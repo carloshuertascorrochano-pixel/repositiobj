@@ -1,6 +1,6 @@
 package carrefour;
 
-public class Persona {
+public abstract class Persona {
 
     private int codigo;
     private String nombre;
@@ -41,6 +41,10 @@ public class Persona {
         System.out.println("persona" );
 
     }
+
+    public abstract void trabajar ();
+
+
 
     @Override
     public String toString(){

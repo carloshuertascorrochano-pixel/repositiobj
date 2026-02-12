@@ -8,6 +8,8 @@ public class EmpleadosApp {
 
         jorge.mostrarinfo();
 
-        
+        jorge.trabajar();
+
+
     }
 }

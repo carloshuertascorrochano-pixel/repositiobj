@@ -34,6 +34,11 @@ public class Cajero extends Persona{
 
     }
 
+    @Override
+    public void trabajar() {
+        System.out.println("cobrando productos");
+    }
+
 
     @Override
     public int getCodigo() {

@@ -35,8 +35,13 @@ public class Reponedor extends Persona{
 
         }
 
+    @Override
+    public void trabajar() {
 
-        @Override
+    }
+
+
+    @Override
         public int getCodigo() {
             return super.getCodigo();
         }
