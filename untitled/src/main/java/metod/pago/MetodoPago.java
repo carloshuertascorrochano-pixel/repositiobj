@@ -18,4 +18,10 @@ public abstract class MetodoPago {
         this.importe = importe;
     }
 
+    @Override
+    public String toString() {
+        return "MetodoPago{" +
+                "importe=" + importe +
+                '}';
+    }
 }
