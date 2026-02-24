@@ -1,0 +1,41 @@
+package Dispositivo;
+
+public abstract class Disp {
+
+    private String nombre;
+    private boolean estado;
+public void apagar(){
+    if (estado){
+        estado=false;
+        System.out.println("Apagando...");
+    }
+
+
+}
+    public Disp (String nombre, boolean estado){
+        this.nombre=nombre;
+        this.estado=estado;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public boolean isEstado() {
+        return estado;
+    }
+
+    public void setEstado(boolean estado) {
+        this.estado = estado;
+    }
+
+
+    public abstract void encendar();
+
+
+
+}
